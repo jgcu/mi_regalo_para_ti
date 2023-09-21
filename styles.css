@@ -1,0 +1,33 @@
+img 
+{
+    float: center;
+}
+
+*{
+    font-family: Roboto;
+    background-color: #FCFFD7;
+}
+
+p{
+    font-size: 50px;
+}
+
+#parrafo{
+
+    width: 100%;
+    height: auto;
+}
+
+#contenedor
+{
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+button
+{
+    padding: 15px;
+    font-size: 20px;
+}

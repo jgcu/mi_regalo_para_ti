@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi regalo para ti</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <audio id="cancion">
+        <source src="yellow.mp3" type="audio/mp3">
+    </audio>
+
+
+
+    <button onclick="iniciar()">Presióname</button>
+    
+
+    <div id="contenedor">
+        <div id="parrafo">
+            <p id="texto-cambiante"></p> 
+        </div>
+    
+        <img id="imagen" src="fondo.png" alt="" height="500px" width="700px">
+
+    </div>
+    
+
+
+    <script>
+
+        function iniciar()
+        {
+            var cancion = document.getElementById('cancion');
+            cancion.play();
+
+
+            function cambiarTexto(nuevoTexto) 
+            {
+                const elementoTexto = document.getElementById('texto-cambiante');
+                elementoTexto.innerText = nuevoTexto;  
+            }
+
+            var i=0;
+            var texto = ['Hola amor mío','Espero que hoy te encuentres bien','No pude llevarte flores hoy',
+            'Pero te las mando por aquí','Siempre voy a tenerte en mi mente','Y en mi corazón','Te amo','Mi marlen hermosa <3'];
+
+            var img = ["flores.jpg","flores2.jpg","flores3.jpg","flores4.jpg","flores5.jpg","flores6.jpg","flores7.jpg","flores8.jpg","flores9.jpg","flores10.jpg","flores11.jpg","flores12.jpg"];
+
+            cambiarTexto('');
+        
+            setInterval(function()
+            {
+                if(i==texto.length)
+                i=0;
+
+                cambiarTexto(texto[i]);
+
+                if(i==3)
+                    cambiarImg();
+
+                i++;
+
+            }, 3000);
+        
+            var k=0;    
+
+            function cambiarImg()
+            {
+            
+                setInterval(function()
+                {
+                    var imagen = document.getElementById("imagen");
+
+                    if(k==img.length)
+                        k=0;
+
+                    // Cambia la ruta de la imagen
+                    imagen.src = img[k];
+
+                    k++;
+
+                }, 500);
+
+            }    
+            
+            
+
+        }
+
+
+    </script>
+
+</body>
+</html>
